@@ -53,12 +53,12 @@ const login = async (req, res) => {
 
     if (user && (await bcrypt.compare(password, user.password))) {
       // Create token
-      const token = jwt.sign(
-        { userId: user._id, username },
-        process.env.JWT_SECRET_KEY
-      );
+      // const token = jwt.sign(
+      //   { userId: user._id, username },
+      //   process.env.JWT_SECRET_KEY
+      // );
       // user
-      res.status(200).json({ user, token });
+      res.status(200).json({ user });
     } else {
       res.status(400).send("Invalid Credentials");
     }
