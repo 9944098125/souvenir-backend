@@ -3,10 +3,8 @@ const express = require("express");
 const {
   createQA,
   getQA,
-  updatedQA,
   deleteQA,
   updateQA,
-  deleteAll,
 } = require("../controllers/qaController");
 const router = express.Router();
 
@@ -21,8 +19,5 @@ router.put("/updateQA/:id", updateQA);
 
 // DELETE QA BY ID
 router.delete("/deleteQA/:id", deleteQA);
-
-// delete all
-router.delete("/deleteAll", deleteAll);
 
 module.exports = router;
